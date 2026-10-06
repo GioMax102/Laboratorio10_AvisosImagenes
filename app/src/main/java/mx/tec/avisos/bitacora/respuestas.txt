@@ -1,0 +1,10 @@
+A qué tamaño se va a ver, en px, en la pantalla más grande que la muestre. Con ese número, ¿qué LADO_MAX eligen?
+- Si la imagen principal de tu aviso ocupará todo el ancho de la pantalla de un teléfono estándar
+(aproximadamente 1080 px físicos), la decisión correcta es elegir un LADO_MAX de 1280. Esto deja un margen de calidad sin desperdiciar datos.
+
+Quién puede ver esa imagen: ¿cualquiera con sesión, solo su dueño, o cualquiera aunque no tenga cuenta? ¿Qué cambiaría en GET /imagenes/{clave}?
+- El GET tendría que comparar el usuario_actual (obtenido del token) con el dueño registrado antes de devolver el archivo.
+
+Qué pasa con una imagen que se subió pero cuyo aviso nunca se publicó (el usuario se arrepintió después del 201 de la imagen). ¿Quién la borra?
+- Configurar una tarea automatizada que borre automáticamente cualquier archivo
+ que no haya sido marcado como "en uso" después de 24 horas.
